@@ -26,7 +26,7 @@
 
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException
 import requests
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
 
@@ -36,6 +36,7 @@ class TasmotaBase(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = settings.get("ip", hostname)
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.username = settings.get("username")
         self.password = settings.get("password")
         super().__init__()
@@ -56,7 +57,7 @@ class TasmotaBase(PDUDriver):
 
         url = "http://{}/cm".format(self.hostname)
         log.debug("HTTP GET: {}".format(url))
-        r = requests.get(url, params)
+        r = requests.get(url, params, timeout=self.timeout)
 
         # check response
         response = r.json()

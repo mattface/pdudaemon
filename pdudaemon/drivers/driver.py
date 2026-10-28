@@ -95,6 +95,9 @@ class PDUDriver(object):
         pass
 
 
+DEFAULT_TIMEOUT = 20
+
+
 class UnknownCommandException(Exception):
     pass
 

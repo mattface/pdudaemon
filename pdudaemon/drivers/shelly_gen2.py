@@ -29,7 +29,7 @@
 
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver
 import requests
 
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
@@ -37,6 +37,7 @@ log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
 class ShellyGen2(PDUDriver):
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
 
         super(ShellyGen2, self).__init__()
@@ -49,7 +50,8 @@ class ShellyGen2(PDUDriver):
                 "id": 1,
                 "method": method,
                 "params": params,
-            }
+            },
+            timeout=self.timeout,
         )
 
         r.raise_for_status()

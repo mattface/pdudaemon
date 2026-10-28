@@ -24,6 +24,7 @@
 #  MA 02110-1301, USA.
 
 import logging
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT
 from pdudaemon.drivers.localbase import LocalBase
 import requests
 
@@ -35,6 +36,7 @@ class Sainsmart(LocalBase):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
         self.ip = settings.get("ip", self.hostname)
         self.url_base = "http://%s/30000/" % self.ip
@@ -63,4 +65,4 @@ class Sainsmart(LocalBase):
         if (val >= 0):
             url = self.url_base + "%02d" % val
             log.debug("HTTP GET at %s" % url)
-            requests.get(url)
+            requests.get(url, timeout=self.timeout)

@@ -25,7 +25,7 @@
 #  MA 02110-1301, USA.
 
 import logging
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException
 import requests
 import os
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
@@ -34,6 +34,7 @@ log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
 class AnelNETPwrCtrlBase(PDUDriver):
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.username = settings.get("username", "admin")
         self.password = settings.get("password", "anel")
         super().__init__()
@@ -47,7 +48,7 @@ class AnelNETPwrCtrlBase(PDUDriver):
         url = "http://{}?Sw_{}={},{}{}".format(
             self.hostname, command, port_number, self.username, self.password)
         log.debug("HTTP GET: {}".format(url))
-        r = requests.get(url)
+        r = requests.get(url, timeout=self.timeout)
 
         r.raise_for_status()
         if r.text == "User or password error.":

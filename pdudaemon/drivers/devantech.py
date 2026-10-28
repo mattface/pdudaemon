@@ -22,7 +22,7 @@
 #  MA 02110-1301, USA.
 
 import logging
-from pdudaemon.drivers.driver import PDUDriver
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver
 import socket
 import os
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
@@ -34,6 +34,7 @@ class DevantechBase(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
         self.ip = settings["ip"]
         self.port = settings.get("port", 17494)
@@ -42,7 +43,7 @@ class DevantechBase(PDUDriver):
         super(DevantechBase, self).__init__()
 
     def connect(self):
-        self.connection = socket.create_connection((self.ip, self.port))
+        self.connection = socket.create_connection((self.ip, self.port), timeout=self.timeout)
         if self.password:
             log.debug("Attempting connection to %s:%s with provided password.", self.hostname, self.port)
             msg = b'\x79' + self.password.encode("utf-8")
@@ -165,6 +166,7 @@ class DevantechDSBase(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
         # the default hostname may vary. I.e. could be "ds378" for other modules.
         self.ip = settings.get("ip", "dS2824")
@@ -172,7 +174,7 @@ class DevantechDSBase(PDUDriver):
         super().__init__()
 
     def connect(self):
-        self.connection = socket.create_connection((self.ip, self.port))
+        self.connection = socket.create_connection((self.ip, self.port), timeout=self.timeout)
 
     def port_interaction(self, command, port_number):
         self.connect()

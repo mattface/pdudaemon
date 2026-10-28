@@ -23,7 +23,7 @@
 
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException
 import requests
 from requests.auth import HTTPDigestAuth
 
@@ -38,6 +38,7 @@ class ESPHomeHTTP(PDUDriver):
         configuration.
         """
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.port = settings.get("port", 80)
         self.username = settings.get("username")
         self.password = settings.get("password")
@@ -63,7 +64,7 @@ class ESPHomeHTTP(PDUDriver):
         auth = None
         if self.username and self.password:
             auth = HTTPDigestAuth(self.username, self.password)
-        response = requests.post(url, auth=auth)
+        response = requests.post(url, auth=auth, timeout=self.timeout)
 
         log.debug(
             "Response code for request to {}: {}".format(

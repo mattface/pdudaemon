@@ -23,7 +23,7 @@
 #  MA 02110-1301, USA.
 
 import logging
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException
 import requests
 import os
 
@@ -45,6 +45,7 @@ class Intellinet(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.port = settings.get("port", 80)
         self.username = settings.get("username", "admin")
         self.password = settings.get("password", "admin")
@@ -60,7 +61,7 @@ class Intellinet(PDUDriver):
         url = "http://{}:{}/{}".format(self.hostname, self.port, page)
 
         log.debug("HTTP GET: {}".format(url))
-        r = requests.get(url, params, auth=self.auth)
+        r = requests.get(url, params, auth=self.auth, timeout=self.timeout)
 
         r.raise_for_status()
         if r.text.find("401") != -1:

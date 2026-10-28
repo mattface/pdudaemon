@@ -21,7 +21,7 @@ import logging
 from paramiko import SSHClient
 from paramiko.ssh_exception import SSHException
 from paramiko import RejectPolicy, WarningPolicy
-from pdudaemon.drivers.driver import PDUDriver
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver
 import os
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
 
@@ -33,6 +33,7 @@ class UbiquityBase(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
 
         self.sshport = 22
@@ -65,7 +66,8 @@ class UbiquityBase(PDUDriver):
             self.client.set_missing_host_key_policy(WarningPolicy())
 
         self.client.connect(hostname=self.hostname, port=self.sshport,
-                            username=self.username, password=self.password)
+                            username=self.username, password=self.password,
+                            timeout=self.timeout)
 
     def port_interaction(self, command, port_number):
         port_number = int(port_number)

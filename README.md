@@ -82,6 +82,7 @@ For some (or most) network connected devices, it needs to be the actual hostname
 The correct value for `driver` is highly dependent on the used child class and the specific implementation.
 Check the imported [Python module](https://github.com/pdudaemon/pdudaemon/tree/main/pdudaemon/drivers) for that class and look for `drivername` to be sure.
 Some drivers require additional parameters (like a device ID).
+Network drivers accept a `timeout` parameter, the number of seconds to wait for the PDU to respond (20 by default).
 Which parameters are required can also be extracted from the associated python module and child class definition.
 It is also worth checking out the [share](https://github.com/pdudaemon/pdudaemon/tree/main/share) folder for some driver specific example configuration files and helpful scripts that can help prevent major headaches!
 

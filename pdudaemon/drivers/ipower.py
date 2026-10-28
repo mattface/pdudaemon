@@ -19,7 +19,7 @@
 
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException
 import requests
 from requests.auth import HTTPBasicAuth
 
@@ -50,6 +50,7 @@ log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
 class LindyIPowerClassic8(PDUDriver):
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.port = settings.get("port", 80)
         self.username = settings.get("username")
         self.password = settings.get("password")
@@ -83,7 +84,7 @@ class LindyIPowerClassic8(PDUDriver):
         if self.username and self.password:
             auth = HTTPBasicAuth(self.username, self.password)
 
-        response = requests.get(url, params=params, auth=auth)
+        response = requests.get(url, params=params, auth=auth, timeout=self.timeout)
         log.debug(
             "Response code for request to {}: {}".format(
                 self.hostname, response.status_code

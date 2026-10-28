@@ -22,7 +22,7 @@ import json
 import requests
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException, UnknownCommandException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException, UnknownCommandException
 
 log = logging.getLogger('pdud.drivers.' + os.path.basename(__file__))
 
@@ -31,6 +31,7 @@ class NetioJson(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
         self.ip = settings.get('ip', self.hostname)
         self.port = settings.get('port', 80)
@@ -59,7 +60,7 @@ class NetioJson(PDUDriver):
             raise UnknownCommandException(f'Unknown command: {command}')
 
     def _do_request(self, url, port_number, action):
-        response = requests.post(url, json=self._get_request_json(port_number, action))
+        response = requests.post(url, json=self._get_request_json(port_number, action), timeout=self.timeout)
 
         if not self._is_request_successful(response, port_number, action):
             raise FailedRequestException(f'Request failed. Received following response:\n{response.text}')

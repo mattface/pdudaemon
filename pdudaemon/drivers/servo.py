@@ -23,10 +23,21 @@
 
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver
 from xmlrpc import client
 
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
+
+
+class TimeoutTransport(client.Transport):
+    def __init__(self, timeout):
+        super().__init__()
+        self.timeout = timeout
+
+    def make_connection(self, host):
+        connection = super().make_connection(host)
+        connection.timeout = self.timeout
+        return connection
 
 
 class Servo(PDUDriver):
@@ -36,6 +47,7 @@ class Servo(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
 
         self.ctrls = settings.get("ctrls", ["cold_reset"])
@@ -69,7 +81,7 @@ class Servo(PDUDriver):
 
             log.debug("Setting %s:%s" % (ctrl, val))
 
-            with client.ServerProxy(self.remote_uri) as proxy:
+            with client.ServerProxy(self.remote_uri, transport=TimeoutTransport(self.timeout)) as proxy:
                 proxy.set(ctrl, val)
 
     @classmethod

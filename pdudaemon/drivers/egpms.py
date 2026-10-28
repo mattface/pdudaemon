@@ -22,7 +22,7 @@
 #  MA 02110-1301, USA.
 
 import logging
-from pdudaemon.drivers.driver import PDUDriver
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver
 import socket
 from array import array
 
@@ -35,6 +35,7 @@ class EgPMS(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
         self.ip = settings["ip"]
         self.password = array('B', settings["password"].encode("utf-8") + 8 * b' ')[:8]
@@ -72,7 +73,7 @@ class EgPMS(PDUDriver):
             log.debug("on: %d (raw: %x)" % (s >> 4 == 1, s))
 
     def connect(self):
-        self.socket = socket.create_connection((self.ip, 5000))
+        self.socket = socket.create_connection((self.ip, 5000), timeout=self.timeout)
         self.socket.send(b'\x11')
         self.challenge = array('B', self.socket.recv(4))
 

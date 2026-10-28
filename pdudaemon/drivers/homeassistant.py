@@ -23,7 +23,7 @@
 
 import logging
 import os
-from pdudaemon.drivers.driver import PDUDriver, FailedRequestException
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver, FailedRequestException
 import requests
 
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
@@ -37,6 +37,7 @@ class HomeAssistantHTTP(PDUDriver):
         the host configuration.
         """
         self.hostname = settings.get("hostname", hostname)
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.port = settings.get("port", 80)
         self.api_key = settings.get("api_key")
 
@@ -60,7 +61,7 @@ class HomeAssistantHTTP(PDUDriver):
         headers = { "Authorization": "Bearer {}".format(self.api_key) }
         body = { "entity_id": "switch.{}".format(ha_entity_id) }
 
-        response = requests.post(url, headers=headers, json=body)
+        response = requests.post(url, headers=headers, json=body, timeout=self.timeout)
 
         log.debug(
             "Response code for request to {}: {}".format(

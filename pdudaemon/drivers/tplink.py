@@ -26,7 +26,7 @@
 import logging
 import json
 import socket
-from pdudaemon.drivers.driver import PDUDriver
+from pdudaemon.drivers.driver import DEFAULT_TIMEOUT, PDUDriver
 from struct import pack
 import os
 log = logging.getLogger("pdud.drivers." + os.path.basename(__file__))
@@ -37,6 +37,7 @@ class TPLink(PDUDriver):
 
     def __init__(self, hostname, settings):
         self.hostname = hostname
+        self.timeout = settings.get("timeout", DEFAULT_TIMEOUT)
         self.settings = settings
         self.childinfo = {}
         self.getinfo()
@@ -81,9 +82,8 @@ class TPLink(PDUDriver):
     def send_command(self, json_string):
         try:
             sock_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock_tcp.settimeout(10)
+            sock_tcp.settimeout(self.timeout)
             sock_tcp.connect((self.hostname, 9999))
-            sock_tcp.settimeout(None)
             sock_tcp.send(self.encrypt(json_string))
             data = sock_tcp.recv(2048)
             sock_tcp.close()
@@ -131,4 +131,5 @@ class TPLink(PDUDriver):
             }
         }
         log.debug(datadict)
-        self.send_command(json.dumps(datadict))
+        if not self.send_command(json.dumps(datadict)):
+            raise RuntimeError("No response from device.")
