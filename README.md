@@ -156,6 +156,14 @@ implementations can be found inside the
 directory.
 Any new driver classes should be added to [strategies.py](https://github.com/pdudaemon/pdudaemon/blob/main/pdudaemon/drivers/strategies.py).
 
+Drivers that use pexpect are tested by replaying sessions recorded with real PDUs, which are kept in
+[tests/recordings](https://github.com/pdudaemon/pdudaemon/tree/main/tests/recordings).
+If your PDU has a firmware version that isn't there yet, please record it on a port with nothing connected and send it in:
+```
+$ PYTHONPATH=. tests/recordings/record.py --driver apc7952 --hostname pdu01 --port 20 --request on --password apc
+$ PYTHONPATH=. tests/recordings/record.py --driver apc7952 --hostname pdu01 --port 20 --request off --password apc
+```
+
 External implementation of PDUDriver can also be registered using the python
 entry_points mechanism. For example add the following to your setup.cfg:
 ```

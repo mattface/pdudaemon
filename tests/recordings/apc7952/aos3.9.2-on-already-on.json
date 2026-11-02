@@ -1,0 +1,212 @@
+{
+ "meta": {
+  "driver": "apc7952",
+  "port": 20,
+  "request": "on",
+  "settings": {
+   "username": "username",
+   "password": "password"
+  },
+  "firmware": {
+   "aos": "v3.9.2",
+   "app": "v3.9.2"
+  }
+ },
+ "events": [
+  {
+   "t": 0.064,
+   "dir": "send",
+   "data": "\r"
+  },
+  {
+   "t": 0.065,
+   "dir": "recv",
+   "data": "Trying pdu01...\r\nConnected to pdu01.\r\nEscape character is '^]'.\r\n\n\rUser Name : "
+  },
+  {
+   "t": 0.115,
+   "dir": "send",
+   "data": "username\r"
+  },
+  {
+   "t": 0.115,
+   "dir": "recv",
+   "data": "\n\rUser Name : username\n\rPassword  : "
+  },
+  {
+   "t": 0.177,
+   "dir": "send",
+   "data": "password\r\r"
+  },
+  {
+   "t": 0.228,
+   "dir": "recv",
+   "data": "********\n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.9.2\r\n(c) Copyright 2009 All Rights Reserved  Rack PDU APP                     v3.9.2\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 10:18:31\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 4 Days 14 Hours 46 Minutes                Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, "
+  },
+  {
+   "t": 0.342,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 0.393,
+   "dir": "recv",
+   "data": "<ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 0.443,
+   "dir": "send",
+   "data": "\u001b\r\r"
+  },
+  {
+   "t": 0.544,
+   "dir": "recv",
+   "data": "\n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.9.2\r\n(c) Copyright 2009 All Rights Reserved  Rack PDU APP                     v3.9.2\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 10:18:32\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 4 Days 14 Hours 46 Minutes                Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.9.2\r\n(c) Copyright 2009 All Rights Reserved  Rack PDU APP                     v3.9.2\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 10:18:32\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 4 Days 14 Hours 46 Minutes                Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 0.866,
+   "dir": "send",
+   "data": "1\r"
+  },
+  {
+   "t": 0.866,
+   "dir": "recv",
+   "data": "\n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> 1\n\n\r------- Device Manager ---------------------------------- crit: 1 warn: 0 -----\r\n"
+  },
+  {
+   "t": 1.012,
+   "dir": "send",
+   "data": "2\r"
+  },
+  {
+   "t": 1.013,
+   "dir": "recv",
+   "data": "\r\n     1- Phase Management\r\n     2- Outlet Management\r\n     3- Power Supply Status\r\n     4- PDU Configuration\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> 2\n\n\r------- Outlet Management ------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Outlet Control/Configuration\r\n     2- Outlet Restriction\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 1.119,
+   "dir": "send",
+   "data": "1\r\r"
+  },
+  {
+   "t": 1.17,
+   "dir": "recv",
+   "data": "1\n\n\r------- Outlet Control/Configuration -------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Outlet 1                 ON\r\n     2- Outlet 2                 ON\r\n     3- Outlet 3                 ON\r\n     4- Outlet 4                 ON\r\n     5- Crystal PC               OFF\r\n     6- Outlet 6                 ON\r\n     7- Outlet 7                 OFF\r\n     8- Outlet 8                 ON\r\n     9- Outlet 9                 ON\r\n    10- Outlet 10                ON\r\n    11- Outlet 11                ON\r\n    12- Outlet 12                ON\r\n    13- Outlet 13                ON\r\n    14- Outlet 14                ON\r\n    15- Outlet 15                ON\r\n    16- Outlet 16                ON\r\n    17- Outlet 17                ON\r\n    18- Outlet 18                ON\r\n    19- Outlet 19                ON\r\n    20- Outlet 20                ON\r\n    21- Outlet 21                ON\r\n    22- Outlet 22                ON\r\n\r        Press <ENTER> to continue..."
+  },
+  {
+   "t": 1.328,
+   "dir": "send",
+   "data": "20\r"
+  },
+  {
+   "t": 1.379,
+   "dir": "recv",
+   "data": "\r                                    \r    23- Outlet 23                OFF\r\n    24- Outlet 24                OFF\r\n    25- Master Control/Configuration\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 1.429,
+   "dir": "send",
+   "data": "1\r"
+  },
+  {
+   "t": 1.45,
+   "dir": "recv",
+   "data": "20\n\n\r------- Outlet 20 --------------------------------------- crit: 1 warn: 0 -----\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Control Outlet    \r\n     2- Configure Outlet  \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 1.533,
+   "dir": "send",
+   "data": "\r1\r"
+  },
+  {
+   "t": 1.584,
+   "dir": "recv",
+   "data": "1\n\n\r------- Control Outlet ---------------------------------- crit: 1 warn: 0 -----\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Outlet ---------------------------------- crit: 1 warn: 0 -----\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> 1\r\n        -----------------------------------------------------------------------\r\n        Immediate On\r\n\r\n        This command will immediately turn\r\n        outlet 20 named 'Outlet 20' ON.\r\n\r\n        Enter 'YES' to continue or <ENTER> to cancel : "
+  },
+  {
+   "t": 2.027,
+   "dir": "send",
+   "data": "YES\r"
+  },
+  {
+   "t": 2.065,
+   "dir": "recv",
+   "data": "YES\r\n        Command successfully issued.\r\n\r\n        Press <ENTER> to continue..."
+  },
+  {
+   "t": 2.133,
+   "dir": "send",
+   "data": "\r\r"
+  },
+  {
+   "t": 2.184,
+   "dir": "recv",
+   "data": "\r\n\n\n\r------- Control Outlet ---------------------------------- crit: 1 warn: 0 -----\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh"
+  },
+  {
+   "t": 2.234,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 2.284,
+   "dir": "recv",
+   "data": ", <CTRL-L>- Event Log\r\n> \n\n\r------- Control Outlet ---------------------------------- crit: 1 warn: 0 -----\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel "
+  },
+  {
+   "t": 2.335,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 2.385,
+   "dir": "recv",
+   "data": "\r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet 20 --------------------------------------- crit: 1 warn: 0 -----\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Control Outlet    \r\n     2- Configure Outlet  \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet 20 --------------------------------------- crit: 1 warn: 0 -----\r"
+  },
+  {
+   "t": 2.435,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r"
+  },
+  {
+   "t": 2.586,
+   "dir": "recv",
+   "data": "\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Control Outlet    \r\n     2- Configure Outlet  \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 2.636,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 2.703,
+   "dir": "recv",
+   "data": "\n\n\r------- Outlet Control/Configuration -------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Outlet 1                 ON\r\n     2- Outlet 2                 ON\r\n     3- Outlet 3                 ON\r\n     4- Outlet 4                 ON\r\n     5- Crystal PC               OFF\r\n     6- Outlet 6                 ON\r\n     7- Outlet 7                 OFF\r\n     8- Outlet 8                 ON\r\n     9- Outlet 9                 ON\r\n    10- Outlet 10                ON\r\n    11- Outlet 11                ON\r\n    12- Outlet 12                ON\r\n    13- Outlet 13                ON\r\n    14- Outlet 14                ON\r\n    15- Outlet 15                ON\r\n    16- Outlet 16                ON\r\n    17- Outlet 17                ON\r\n    18- Outlet 18                ON\r\n    19- Outlet 19                ON\r\n    20- Outlet 20                ON\r\n    21- Outlet 21                ON\r\n    22- Outlet 22                ON\r\n\r        Press <ENTER> to continue..."
+  },
+  {
+   "t": 2.903,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 2.953,
+   "dir": "recv",
+   "data": "\r                                    \r    23- Outlet 23                OFF\r\n    24- Outlet 24                OFF\r\n    25- Master Control/Configuration\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet Management ------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Outlet Control/Configuration\r\n     2- Outlet Restriction\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet Management ------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Outlet Control/Configuration\r\n     2- Outlet Restriction\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Device Manager ---------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Phase Management\r\n     2- Outlet Management\r\n     3- Power Supply Status\r\n     4- PDU Configuration\r\n\r\n     "
+  },
+  {
+   "t": 3.003,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r\u001b\r"
+  },
+  {
+   "t": 3.254,
+   "dir": "recv",
+   "data": "<ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Device Manager ---------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Phase Management\r\n     2- Outlet Management\r\n     3- Power Supply Status\r\n     4- PDU Configuration\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console --------------------------------- crit: 1 warn: 0 -----\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 3.304,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r4\r"
+  }
+ ]
+}

@@ -1,0 +1,202 @@
+{
+ "meta": {
+  "driver": "apc7952",
+  "port": 20,
+  "request": "off",
+  "settings": {
+   "username": "username",
+   "password": "password"
+  },
+  "firmware": {
+   "aos": "v3.5.8",
+   "app": "v3.5.7"
+  }
+ },
+ "events": [
+  {
+   "t": 0.055,
+   "dir": "send",
+   "data": "\r"
+  },
+  {
+   "t": 0.056,
+   "dir": "recv",
+   "data": "Trying pdu01...\r\n\r\nConnected to pdu01.\r\nEscape character is '^]'.\r\n\n\rUser Name : "
+  },
+  {
+   "t": 1.104,
+   "dir": "send",
+   "data": "username\r"
+  },
+  {
+   "t": 1.104,
+   "dir": "recv",
+   "data": "\n\rUser Name : username\n\rPassword  : "
+  },
+  {
+   "t": 1.169,
+   "dir": "send",
+   "data": "password\r\r"
+  },
+  {
+   "t": 1.219,
+   "dir": "recv",
+   "data": "********\n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.5.8\r\n(c) Copyright 2007 All Rights Reserved  Rack PDU APP                     v3.5.7\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 05:18:43\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 100 Days 19 Hours 40 Minutes              Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, "
+  },
+  {
+   "t": 1.35,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 1.401,
+   "dir": "recv",
+   "data": "<ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 1.451,
+   "dir": "send",
+   "data": "\u001b\r\r"
+  },
+  {
+   "t": 1.552,
+   "dir": "recv",
+   "data": "\n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.5.8\r\n(c) Copyright 2007 All Rights Reserved  Rack PDU APP                     v3.5.7\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 05:18:43\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 100 Days 19 Hours 40 Minutes              Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 1.606,
+   "dir": "send",
+   "data": "1\r"
+  },
+  {
+   "t": 1.606,
+   "dir": "recv",
+   "data": "\n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.5.8\r\n(c) Copyright 2007 All Rights Reserved  Rack PDU APP                     v3.5.7\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 05:18:43\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 100 Days 19 Hours 40 Minutes              Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> 1\n\n\r------- Device Manager --------------------------------------------------------\r"
+  },
+  {
+   "t": 1.915,
+   "dir": "send",
+   "data": "2\r"
+  },
+  {
+   "t": 1.915,
+   "dir": "recv",
+   "data": "\n\r\n     1- Phase Management\r\n     2- Outlet Management\r\n     3- Power Supply Status\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> 2\n\n\r------- Outlet Management -----------------------------------------------------\r\n\r\n     1- Outlet Control/Configuration\r\n     2- Outlet Restriction\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 2.062,
+   "dir": "send",
+   "data": "1\r\r"
+  },
+  {
+   "t": 2.112,
+   "dir": "recv",
+   "data": "1\n\n\r------- Outlet Control/Configuration ------------------------------------------\r\n\r\n     1- Outlet 1                 OFF\r\n     2- Outlet 2                 OFF\r\n     3- Outlet 3                 OFF\r\n     4- Outlet 4                 OFF\r\n     5- Outlet 5                 OFF\r\n     6- Outlet 6                 OFF\r\n     7- Outlet 7                 OFF\r\n     8- Outlet 8                 OFF\r\n     9- Outlet 9                 OFF\r\n    10- Outlet 10                OFF\r\n    11- Outlet 11                OFF\r\n    12- Outlet 12                OFF\r\n    13- Outlet 13                OFF\r\n    14- Outlet 14                OFF\r\n    15- Outlet 15                OFF\r\n    16- Outlet 16                OFF\r\n    17- Outlet 17                OFF\r\n    18- Outlet 18                OFF\r\n    19- Outlet 19                OFF\r\n    20- Outlet 20                ON\r\n    21- Outlet 21                OFF\r\n    22- Outlet 22                OFF\r\n\r        Press <ENTER> to continue..."
+  },
+  {
+   "t": 2.272,
+   "dir": "send",
+   "data": "20\r"
+  },
+  {
+   "t": 2.322,
+   "dir": "recv",
+   "data": "\r                                    \r    23- Outlet 23                OFF\r\n    24- Outlet 24                OFF\r\n    25- Master Control/Configuration\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 2.372,
+   "dir": "send",
+   "data": "1\r"
+  },
+  {
+   "t": 2.378,
+   "dir": "recv",
+   "data": "20\n\n\r------- Outlet 20 -------------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Control Outlet    \r\n     2- Configure Outlet  \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 2.462,
+   "dir": "send",
+   "data": "\r2\r"
+  },
+  {
+   "t": 2.512,
+   "dir": "recv",
+   "data": "1\n\n\r------- Control Outlet --------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Outlet --------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : ON\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> 2\r\n        -----------------------------------------------------------------------\r\n        Immediate Off\r\n\r\n        This command will immediately turn\r\n        outlet 20 named 'Outlet 20' OFF.\r\n\r\n        Enter 'YES' to continue or <ENTER> to cancel : "
+  },
+  {
+   "t": 2.97,
+   "dir": "send",
+   "data": "YES\r"
+  },
+  {
+   "t": 3.016,
+   "dir": "recv",
+   "data": "YES\r\n        Command successfully issued.\r\n\r\n        Press <ENTER> to continue..."
+  },
+  {
+   "t": 3.084,
+   "dir": "send",
+   "data": "\r\r"
+  },
+  {
+   "t": 3.135,
+   "dir": "recv",
+   "data": "\r\n\n\n\r------- Control Outlet --------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : OFF\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, "
+  },
+  {
+   "t": 3.218,
+   "dir": "send",
+   "data": "\u001b\r"
+  },
+  {
+   "t": 3.269,
+   "dir": "recv",
+   "data": "<ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Outlet --------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : OFF\r\n\r\n     1- Immediate On\r\n     2- Immediate Off\r\n     3- Immediate Reboot\r\n     4- Delayed On\r\n     5- Delayed Off\r\n     6- Delayed Reboot\r\n     7- Cancel \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 3.319,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r"
+  },
+  {
+   "t": 3.469,
+   "dir": "recv",
+   "data": "\n\n\r------- Outlet 20 -------------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : OFF\r\n\r\n     1- Control Outlet    \r\n     2- Configure Outlet  \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet 20 -------------------------------------------------------------\r\n\r\n        Name         : Outlet 20\r\n        Outlet       : 20\r\n        State        : OFF\r\n\r\n     1- Control Outlet    \r\n     2- Configure Outlet  \r\n\r\n     ?- Help, <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet Control/Configuration ------------------------------------------\r\n\r\n"
+  },
+  {
+   "t": 3.52,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r"
+  },
+  {
+   "t": 3.67,
+   "dir": "recv",
+   "data": "     1- Outlet 1                 OFF\r\n     2- Outlet 2                 OFF\r\n     3- Outlet 3                 OFF\r\n     4- Outlet 4                 OFF\r\n     5- Outlet 5                 OFF\r\n     6- Outlet 6                 OFF\r\n     7- Outlet 7                 OFF\r\n     8- Outlet 8                 OFF\r\n     9- Outlet 9                 OFF\r\n    10- Outlet 10                OFF\r\n    11- Outlet 11                OFF\r\n    12- Outlet 12                OFF\r\n    13- Outlet 13                OFF\r\n    14- Outlet 14                OFF\r\n    15- Outlet 15                OFF\r\n    16- Outlet 16                OFF\r\n    17- Outlet 17                OFF\r\n    18- Outlet 18                OFF\r\n    19- Outlet 19                OFF\r\n    20- Outlet 20                OFF\r\n    21- Outlet 21                OFF\r\n    22- Outlet 22                OFF\r\n\r        Press <ENTER> to continue...\r                                    \r    23- Outlet 23                OFF\r\n    24- Outlet 24                OFF\r\n    25- Master Control/Configuration\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> "
+  },
+  {
+   "t": 3.721,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r"
+  },
+  {
+   "t": 3.871,
+   "dir": "recv",
+   "data": "\n\n\r------- Outlet Management -----------------------------------------------------\r\n\r\n     1- Outlet Control/Configuration\r\n     2- Outlet Restriction\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Outlet Management -----------------------------------------------------\r\n\r\n     1- Outlet Control/Configuration\r\n     2- Outlet Restriction\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Device Manager --------------------------------------------------------\r\n\r\n     1- Phase Management\r\n     2- Outlet Management\r\n     3- Power Supply Status\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Device Manager --------------------------------------------------------\r\n\r\n     1- Phase Management\r\n     2- Outlet Management\r\n     3- Power Supply Status\r\n\r\n     <ESC>- Back, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n"
+  },
+  {
+   "t": 3.922,
+   "dir": "send",
+   "data": "\u001b\r\u001b\r\u001b\r\u001b\r"
+  },
+  {
+   "t": 4.273,
+   "dir": "recv",
+   "data": "     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.5.8\r\n(c) Copyright 2007 All Rights Reserved  Rack PDU APP                     v3.5.7\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 05:18:46\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 100 Days 19 Hours 40 Minutes              Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\r------- Control Console -------------------------------------------------------\r\n\r\n     1- Device Manager\r\n     2- Network\r\n     3- System\r\n     4- Logout\r\n\r\n     <ESC>- Main Menu, <ENTER>- Refresh, <CTRL-L>- Event Log\r\n> \n\n\n\rAmerican Power Conversion               Network Management Card AOS      v3.5.8\r\n(c) Copyright 2007 All Rights Reserved  Rack PDU APP                     v3.5.7\r\n-------------------------------------------------------------------------------\r\nName      : RackPDU                                   Date : 11/02/2026\r\nContact   : Unknown                                   Time : 05:18:46\n\rLocation  : Unknown                                   User : Administrator\n\rUp Time   : 100 Days 19 Hours 40 Minutes              Stat : P+ N+ A+\r\n\r\nSwitched Rack PDU: Communication Established\n\n\r------- Control Console ---------------"
+  },
+  {
+   "t": 4.324,
+   "dir": "send",
+   "data": "4\r"
+  }
+ ]
+}
